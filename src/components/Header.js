@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class Header extends Component {
   render() {
     return (
-      <header>
-        <h1>Movie Cards Library - CRUD</h1>
+      <header className="header">
+        <h1 className="header-title">Movie Cards Library - CRUD</h1>
       </header>
     );
   }

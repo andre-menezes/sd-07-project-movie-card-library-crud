@@ -39,16 +39,22 @@ class MovieDetails extends Component {
     if (loading) return <Loading />;
 
     return (
-      <div data-testid="movie-details">
-        <img alt="Movie Cover" src={`../${imagePath}`} />
-        <p>{`Title: ${title}`}</p>
-        <p>{`Subtitle: ${subtitle}`}</p>
-        <p>{`Storyline: ${storyline}`}</p>
-        <p>{`Genre: ${genre}`}</p>
-        <p>{`Rating: ${rating}`}</p>
-        <Link to={'/'}>VOLTAR</Link>
-        <Link to={`/movies/${id}/edit`}>EDITAR</Link>
-        <Link to={'/'} onClick={this.remove}>DELETAR</Link>
+      <div data-testid="movie-details" className="background">
+        <img alt="Movie Cover" src={`../${imagePath}`} className="movie-image" />
+        <div className="movie-details">
+          <div className="movie-info">
+            <p className="movie-details-data"><strong>Title: </strong>{title}</p>
+            <p className="movie-details-data"><strong>Subtitle: </strong>{subtitle}</p>
+            <p className="movie-details-data"><strong>Storyline: </strong>{storyline}</p>
+            <p className="movie-details-data"><strong>Genre: </strong>{genre}</p>
+            <p className="movie-details-data"><strong>Rating: </strong>{rating}</p>
+          </div>
+          <div className="movie-details-links">
+            <Link to={'/'} className="button">VOLTAR</Link>
+            <Link to={`/movies/${id}/edit`} className="button">EDITAR</Link>
+            <Link to={'/'} onClick={this.remove} className="button">DELETAR</Link>
+          </div>
+        </div>
       </div>
     );
   }
